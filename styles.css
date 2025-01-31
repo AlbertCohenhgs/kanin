@@ -72,6 +72,10 @@ body {
     background-color: #6a0dad;
 }
 
+.green-bar {
+    background-color: #DF811B;
+}
+
 .bar-container button {
     background: none;
     border: none;
@@ -114,4 +118,23 @@ button.decrement, button.increment {
 button.decrement-small, button.increment-small {
     font-size: 18px;
     padding: 3px 6px;
+}
+
+.character-story {
+    margin-top: 30px;
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.character-story h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.character-story p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ddd;
 }
