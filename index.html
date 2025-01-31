@@ -3,13 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo</title>
+    <title>Ficha de RPG</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bem-vindo!</h1>
-        <p>O acesso a esta área é restrito. Se você não tem permissão, por favor, saia.</p>
+        <!-- Foto do Personagem -->
+        <div class="character-image">
+            <img src="img/kanin.jpg" alt="Foto do Personagem">
+        </div>
+
+        <!-- Nome e Idade Pré-definidos -->
+        <div class="character-info">
+            <p><strong>Nome:</strong> <span id="character-name">Kanin Bekker</span></p>
+            <p><strong>Idade:</strong> <span id="character-age">25</span></p>
+        </div>
+
+        <!-- Perícias -->
+        <div class="skills">
+            <h3>Perícias</h3>
+            <ul>
+                <li>FOR</li>
+                <li>AGL</li>
+                <!-- Adicione mais perícias conforme necessário -->
+            </ul>
+        </div>
+
+        <!-- Arquétipo -->
+        <div class="archetype">
+            <h3>Arquétipo</h3>
+            <p>Esbelto</p>
+        </div>
+
+        <!-- Barras de Vida e Sanidade -->
+        <div class="stats">
+            <h3>Estatísticas</h3>
+            <div class="stat-bar">
+                <strong>VIDA:</strong>
+                <div class="bar-container red-bar">
+                    <button class="decrement" onclick="updateStat('hp-current', -5)">&#xab;</button>
+                    <button class="decrement-small" onclick="updateStat('hp-current', -1)">&#x2039;</button>
+                    <span id="hp-current">0</span>/<span id="hp-max">0</span>
+                    <button class="increment-small" onclick="updateStat('hp-current', 1)">&#x203a;</button>
+                    <button class="increment" onclick="updateStat('hp-current', 5)">&#xbb;</button>
+                </div>
+            </div>
+            <div class="stat-bar">
+                <strong>SANIDADE:</strong>
+                <div class="bar-container purple-bar">
+                    <button class="decrement" onclick="updateStat('sanity-current', -5)">&#xab;</button>
+                    <button class="decrement-small" onclick="updateStat('sanity-current', -1)">&#x2039;</button>
+                    <span id="sanity-current">0</span>/<span id="sanity-max">0</span>
+                    <button class="increment-small" onclick="updateStat('sanity-current', 1)">&#x203a;</button>
+                    <button class="increment" onclick="updateStat('sanity-current', 5)">&#xbb;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="abilities">
+            <h3>Habilidades</h3>
+            <ul>
+                <li class="ability" onclick="toggleAbility(this)">
+                    <span class="ability-name">SEMPRE ME SURPRENDO</span>
+                    <div class="ability-description">Uma vez por encontro, você pode recusar a aumentar seu nível de sequela ao receber um ferimento.</div>
+                </li>
+                <li class="ability" onclick="toggleAbility(this)">
+                    <span class="ability-name">JOVEM DEMAIS PARA MORRER</span>
+                    <div class="ability-description">Você acredita que ainda tem muito o que viver e por isso sente pavor da morte. Uma vez por cena, sempre que estiver sendo atacado e com menos de 5 PV você pode rolar um teste de fuga DT 5. Caso passe, você entra em “Frenesi” e despista o seu perseguidor. Caso falhe, você automaticamente enlouquece.</div>
+                </li>
+                <li class="ability" onclick="toggleAbility(this)">
+                    <span class="ability-name">MELHOR AMIGO</span>
+                    <div class="ability-description">Sempre que entrar em uma cena de fuga e você estiver junto de outro personagem que esteja entre suas pessoas favoritas, vocês podem “Dar as mãos” para receber +1d nos testes de fuga. Caso vocês soltem as mãos durante a cena de fuga, ambos recebem a condição “Peso na consciência” e -2d nos testes de fuga.</div>
+                </li>
+                <!-- Adicione mais habilidades conforme necessário -->
+            </ul>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
