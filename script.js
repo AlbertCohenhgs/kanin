@@ -40,25 +40,30 @@ function updateStat(statId, change) {
 
 // Salva os valores das barras de vida e sanidade no LocalStorage
 function saveStats() {
-    const vida = document.getElementById('hp-current').textContent; // Atualizado para pegar 'hp-current'
-    const sanidade = document.getElementById('sanity-current').textContent; // Atualizado para pegar 'sanity-current'
+    const vida = document.getElementById('hp-current').textContent;
+    const sanidade = document.getElementById('sanity-current').textContent;
+    const shot = document.getElementById('sanity-current').textContent; // Pega os pontos de shot
 
     localStorage.setItem('vida', vida);
     localStorage.setItem('sanidade', sanidade);
+    localStorage.setItem('shot', shot); // Salva os pontos de shot
 }
 
-// Recupera os valores das barras de vida e sanidade do LocalStorage
+// Recupera os valores das barras de vida, sanidade e pontos de shot do LocalStorage
 function loadStats() {
     const savedVida = localStorage.getItem('vida');
     const savedSanidade = localStorage.getItem('sanidade');
+    const savedShot = localStorage.getItem('shot'); // Recupera os pontos de shot
 
     if (savedVida) {
-        document.getElementById('hp-current').textContent = savedVida; // Atualizado para 'hp-current'
+        document.getElementById('hp-current').textContent = savedVida;
     }
     if (savedSanidade) {
-        document.getElementById('sanity-current').textContent = savedSanidade; // Atualizado para 'sanity-current'
+        document.getElementById('sanity-current').textContent = savedSanidade;
+    }
+    if (savedShot) {
+        document.getElementById('shot-current').textContent = savedShot; // Atualiza os pontos de shot
     }
 }
-
 // Chama a função para carregar os valores ao iniciar a página
 window.onload = loadStats;
